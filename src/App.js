@@ -1,10 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import { Footer, Navbar, Routes } from './components';
+import { useState } from 'react';
 
 function App() {
+  const [darkTheme, setDarkTheme] = useState(false)
   return (
-    <div className="npm run start">
-    <h1 className='text-3xl font-bold  text-yellow-600'>sdsdsd</h1>
+    <div className={darkTheme ? 'dark' : ''}>
+      <div className="dark:bg-gray-900 bg-gray-100 dark:text-gray-200 black min-h-screen">
+        <Navbar setDarkTheme={setDarkTheme} darkTheme={darkTheme} />
+        <Routes />
+        <Footer />
+      </div>
     </div>
   );
 }
